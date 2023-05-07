@@ -1,5 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { marked } from 'marked';
+import { mangle } from "marked-mangle";
+import { gfmHeadingId } from "marked-gfm-heading-id";
+
+const options = {
+  prefix: "my-prefix-",
+};
 
 @Component({
   selector: 'app-markdown',
@@ -12,6 +18,8 @@ export class MarkdownComponent implements OnInit {
   md!: string;
 
   ngOnInit(): void {
+    marked.use(mangle());
+    marked.use(gfmHeadingId(options));
     this.md = marked(this.data);
   }
 }
