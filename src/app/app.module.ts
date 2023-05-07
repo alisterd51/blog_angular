@@ -13,13 +13,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { NgIconsModule } from '@ng-icons/core';
 import { bootstrapGithub } from '@ng-icons/bootstrap-icons';
+import { CubeComponent } from './cube/cube.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
     MarkdownComponent,
-    NavbarComponent
+    NavbarComponent,
+    CubeComponent
   ],
   imports: [
     BrowserModule,
