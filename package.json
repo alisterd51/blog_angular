@@ -22,6 +22,7 @@
     "marked": "^5.0.1",
     "marked-gfm-heading-id": "^3.0.1",
     "marked-mangle": "^1.0.1",
+    "prismjs": "^1.29.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
