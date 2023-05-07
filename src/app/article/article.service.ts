@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ArticleService {
-  url = "https://raw.githubusercontent.com/alisterd51/test_c/master/README.md";
+  url = "https://raw.githubusercontent.com/alisterd51/dolphin/master/Readme.md";
 
   constructor(
     private http: HttpClient

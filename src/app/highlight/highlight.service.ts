@@ -1,7 +1,5 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 
-//import 'clipboard';
-
 import 'prismjs';
 import 'prismjs/plugins/toolbar/prism-toolbar';
 import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
