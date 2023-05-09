@@ -11,9 +11,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTreeModule } from '@angular/material/tree';
 import { NgIconsModule } from '@ng-icons/core';
 import { bootstrapGithub } from '@ng-icons/bootstrap-icons';
 import { CubeComponent } from './cube/cube.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { CubeComponent } from './cube/cube.component';
     ArticleComponent,
     MarkdownComponent,
     NavbarComponent,
-    CubeComponent
+    CubeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,8 @@ import { CubeComponent } from './cube/cube.component';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
+    MatMenuModule,
+    MatTreeModule,
     NgIconsModule.withIcons({ bootstrapGithub }),
   ],
   providers: [],
