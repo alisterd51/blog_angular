@@ -8,36 +8,8 @@
     Home
   </a>
   <div *ngIf="!small">
-    <button mat-button [matMenuTriggerFor]="sevicesMenu">
-      My Services
-    </button>
-    <mat-menu #sevicesMenu="matMenu">
-      <a mat-menu-item href="https://anclarma.fr">
-        emulatorjs
-      </a>
-      <a mat-menu-item href="https://blog.anclarma.fr">
-        blog angular
-      </a>
-      <a mat-menu-item href="https://gitea.anclarma.fr">
-        gitea
-      </a>
-      <a mat-menu-item href="https://plex.anclarma.fr">
-        plex
-      </a>
-      <a mat-menu-item href="https://portfolio.anclarma.fr">
-        portfolio ruby on rails
-      </a>
-      <a mat-menu-item href="https://wordpress.anclarma.fr">
-        wordpress
-      </a>
-    </mat-menu>
-    <button mat-button [matMenuTriggerFor]="customMenu">
-      Custom Toolbar
-    </button>
-    <mat-menu #customMenu="matMenu">
-      <a mat-menu-item routerLink="/article">Article</a>
-      <a mat-menu-item routerLink="/cube">Cube</a>
-    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="sevicesMenu">My Services</button>
+    <button mat-button [matMenuTriggerFor]="customMenu">Custom Toolbar</button>
     <a mat-button href="https://github.com/alisterd51/blog_angular/tree/latest">
       <ng-icon name="bootstrapGithub"></ng-icon>
       GitHub
@@ -48,8 +20,38 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #smallMenu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
+      <button mat-menu-item [matMenuTriggerFor]="sevicesMenu">My Services</button>
+      <button mat-menu-item [matMenuTriggerFor]="customMenu">Custom Toolbar</button>
+      <a mat-menu-item href="https://github.com/alisterd51/blog_angular/tree/latest">
+        <ng-icon name="bootstrapGithub"></ng-icon>
+        GitHub
+      </a>
     </mat-menu>
   </div>
 </mat-toolbar>
+
+<mat-menu #sevicesMenu="matMenu">
+  <a mat-menu-item href="https://anclarma.fr">
+    emulatorjs
+  </a>
+  <a mat-menu-item href="https://blog.anclarma.fr">
+    blog angular
+  </a>
+  <a mat-menu-item href="https://gitea.anclarma.fr">
+    gitea
+  </a>
+  <a mat-menu-item href="https://plex.anclarma.fr">
+    plex
+  </a>
+  <a mat-menu-item href="https://portfolio.anclarma.fr">
+    portfolio ruby on rails
+  </a>
+  <a mat-menu-item href="https://wordpress.anclarma.fr">
+    wordpress
+  </a>
+</mat-menu>
+
+<mat-menu #customMenu="matMenu">
+  <a mat-menu-item routerLink="/article">Article</a>
+  <a mat-menu-item routerLink="/cube">Cube</a>
+</mat-menu>
