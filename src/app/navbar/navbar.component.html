@@ -1,15 +1,16 @@
 <mat-toolbar color="primary">
-  <a mat-button routerLink="/">
+  <a mat-icon-button routerLink="/">
     <mat-icon
       aria-hidden="false"
       aria-label="Example home icon"
       fontIcon="home"
     ></mat-icon>
-    Home
   </a>
   <div *ngIf="!small">
-    <button mat-button [matMenuTriggerFor]="sevicesMenu">My Services</button>
-    <button mat-button [matMenuTriggerFor]="customMenu">Custom Toolbar</button>
+    <button mat-button [matMenuTriggerFor]="sevicesMenu">Services</button>
+    <button mat-button [matMenuTriggerFor]="customMenu">Custom</button>
+    <button mat-button [matMenuTriggerFor]="portfolioMenu">Portfolio</button>
+    <button mat-button [matMenuTriggerFor]="favoriteSitesMenu">Mes sites favories</button>
     <a mat-button href="https://github.com/alisterd51/blog_angular/tree/latest">
       <ng-icon name="bootstrapGithub"></ng-icon>
       GitHub
@@ -19,16 +20,19 @@
     <button mat-icon-button [matMenuTriggerFor]="smallMenu">
       <mat-icon>more_vert</mat-icon>
     </button>
-    <mat-menu #smallMenu="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="sevicesMenu">My Services</button>
-      <button mat-menu-item [matMenuTriggerFor]="customMenu">Custom Toolbar</button>
-      <a mat-menu-item href="https://github.com/alisterd51/blog_angular/tree/latest">
-        <ng-icon name="bootstrapGithub"></ng-icon>
-        GitHub
-      </a>
-    </mat-menu>
   </div>
 </mat-toolbar>
+
+<mat-menu #smallMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="sevicesMenu">Services</button>
+  <button mat-menu-item [matMenuTriggerFor]="customMenu">Custom</button>
+  <button mat-menu-item [matMenuTriggerFor]="portfolioMenu">Portfolio</button>
+  <button mat-menu-item [matMenuTriggerFor]="favoriteSitesMenu">Mes sites favories</button>
+  <a mat-menu-item href="https://github.com/alisterd51/blog_angular/tree/latest">
+    <ng-icon name="bootstrapGithub"></ng-icon>
+    GitHub
+  </a>
+</mat-menu>
 
 <mat-menu #sevicesMenu="matMenu">
   <a mat-menu-item href="https://anclarma.fr">
@@ -54,4 +58,27 @@
 <mat-menu #customMenu="matMenu">
   <a mat-menu-item routerLink="/article">Article</a>
   <a mat-menu-item routerLink="/cube">Cube</a>
+</mat-menu>
+
+<mat-menu #portfolioMenu="matMenu">
+  <a mat-menu-item>Angular</a>
+  <a mat-menu-item>Bash</a>
+  <a mat-menu-item>C</a>
+  <a mat-menu-item>C++</a>
+  <a mat-menu-item>Docker</a>
+  <a mat-menu-item>Go</a>
+  <a mat-menu-item>HTML/CSS</a>
+  <a mat-menu-item>Kubernetes</a>
+  <a mat-menu-item>Nestjs</a>
+  <a mat-menu-item>Python</a>
+  <a mat-menu-item>Rust</a>
+</mat-menu>
+
+<mat-menu #favoriteSitesMenu="matMenu">
+  <a mat-menu-item href="https://www.jonathandupre.fr/">
+    La taverne de John-John
+  </a>
+  <a mat-menu-item href="https://www.commitstrip.com/">
+    CommitStrip
+  </a>
 </mat-menu>
