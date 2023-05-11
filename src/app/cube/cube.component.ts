@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import * as THREE from 'three';
 
 @Component({
@@ -72,6 +72,31 @@ export class CubeComponent implements OnInit, AfterViewInit {
     this.cube.rotation.y += this.rotationSpeedY;
   }
 
+  private testX = 0.05;
+  private testY = 0.05;
+  private testZ = 2;
+
+  private moveCube() {
+    if (this.cube.position.x < -5) {
+      this.testX = 0.05;
+    } else if (this.cube.position.x > 5) {
+      this.testX = -0.05;
+    }
+    if (this.cube.position.y < -2) {
+      this.testY = 0.05;
+    } else if (this.cube.position.y > 2) {
+      this.testY = -0.05;
+    }
+    if (this.cube.position.z < -150) {
+      this.testZ = 2;
+    } else if (this.cube.position.z > 150) {
+      this.testZ = -2;
+    }
+    this.cube.position.x += this.testX;
+    this.cube.position.y += this.testY;
+    this.cube.position.z += this.testZ;
+  }
+
   private startRenderingLoop() {
     // Renderer
     this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
@@ -82,8 +107,16 @@ export class CubeComponent implements OnInit, AfterViewInit {
     (function render() {
       requestAnimationFrame(render);
       component.animateCube();
+      component.moveCube();
       component.renderer.render(component.scene, component.camera);
     }());
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.createScene();
+    this.renderer.setPixelRatio(devicePixelRatio);
+    this.renderer.setSize(event.target.innerWidth, event.target.innerWidth / 2);
   }
 
   ngOnInit(): void {
