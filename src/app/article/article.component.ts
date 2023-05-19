@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ArticleService } from './article.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { ArticleService } from './article.service';
   providers: [ArticleService],
 })
 export class ArticleComponent implements OnInit {
+  @Input()
+  url: string = "https://gitea.anclarma.fr/anclarma/articles/raw/branch/main/articles/test.md";
   data: string;
 
   constructor(
@@ -19,7 +21,7 @@ export class ArticleComponent implements OnInit {
   }
 
   download() {
-    this.articleService.getMarkdown().subscribe((results) => {
+    this.articleService.getMarkdown(this.url).subscribe((results) => {
       this.data = results;
     });
   }
