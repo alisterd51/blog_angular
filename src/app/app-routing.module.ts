@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ArticleComponent } from './article/article.component';
 import { CubeComponent } from './cube/cube.component';
 import { HomeComponent } from './home/home.component';
+import { TetrisComponent } from './tetris/tetris.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'cube',
     component: CubeComponent,
+  },
+  {
+    path: 'tetris',
+    component: TetrisComponent,
   },
 ];
 

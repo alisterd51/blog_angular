@@ -13,10 +13,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgIconsModule } from '@ng-icons/core';
 import { bootstrapGithub } from '@ng-icons/bootstrap-icons';
 import { CubeComponent } from './cube/cube.component';
 import { HomeComponent } from './home/home.component';
+import { TetrisComponent } from './tetris/tetris.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { HomeComponent } from './home/home.component';
     MarkdownComponent,
     NavbarComponent,
     CubeComponent,
-    HomeComponent
+    HomeComponent,
+    TetrisComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,7 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatMenuModule,
     MatTreeModule,
+    MatSidenavModule,
     NgIconsModule.withIcons({ bootstrapGithub }),
   ],
   providers: [],

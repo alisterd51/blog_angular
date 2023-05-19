@@ -1,63 +1,66 @@
 <mat-toolbar color="primary">
-  <a mat-icon-button routerLink="/">
-    <mat-icon
-      aria-hidden="false"
-      aria-label="Example home icon"
-      fontIcon="home"
-    ></mat-icon>
-  </a>
-  <div *ngIf="!small">
-    <button mat-button [matMenuTriggerFor]="sevicesMenu">Services</button>
-    <button mat-button [matMenuTriggerFor]="customMenu">Custom</button>
-    <button mat-button [matMenuTriggerFor]="portfolioMenu">Portfolio</button>
-    <button mat-button [matMenuTriggerFor]="favoriteSitesMenu">Mes sites favories</button>
-    <a mat-button href="https://github.com/alisterd51/blog_angular/tree/latest">
-      <ng-icon name="bootstrapGithub"></ng-icon>
-      GitHub
+  <mat-toolbar-row>
+    <a mat-icon-button routerLink="/">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="home"
+      ></mat-icon>
     </a>
-  </div>
-  <div *ngIf="small">
-    <button mat-icon-button [matMenuTriggerFor]="smallMenu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-  </div>
+    <div *ngIf="!small">
+      <button mat-button [matMenuTriggerFor]="sevicesMenu">Services</button>
+      <button mat-button [matMenuTriggerFor]="customMenu">Custom</button>
+      <button mat-button [matMenuTriggerFor]="portfolioMenu">Portfolio</button>
+      <button mat-button [matMenuTriggerFor]="favoriteSitesMenu">
+        Mes sites favories
+      </button>
+      <a
+        mat-button
+        href="https://github.com/alisterd51/blog_angular/tree/latest"
+      >
+        <ng-icon name="bootstrapGithub"></ng-icon>
+        GitHub
+      </a>
+    </div>
+    <div *ngIf="small">
+      <button mat-icon-button [matMenuTriggerFor]="smallMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-menu #smallMenu="matMenu">
   <button mat-menu-item [matMenuTriggerFor]="sevicesMenu">Services</button>
   <button mat-menu-item [matMenuTriggerFor]="customMenu">Custom</button>
   <button mat-menu-item [matMenuTriggerFor]="portfolioMenu">Portfolio</button>
-  <button mat-menu-item [matMenuTriggerFor]="favoriteSitesMenu">Mes sites favories</button>
-  <a mat-menu-item href="https://github.com/alisterd51/blog_angular/tree/latest">
+  <button mat-menu-item [matMenuTriggerFor]="favoriteSitesMenu">
+    Mes sites favories
+  </button>
+  <a
+    mat-menu-item
+    href="https://github.com/alisterd51/blog_angular/tree/latest"
+  >
     <ng-icon name="bootstrapGithub"></ng-icon>
     GitHub
   </a>
 </mat-menu>
 
 <mat-menu #sevicesMenu="matMenu">
-  <a mat-menu-item href="https://anclarma.fr">
-    emulatorjs
-  </a>
-  <a mat-menu-item href="https://blog.anclarma.fr">
-    blog angular
-  </a>
-  <a mat-menu-item href="https://gitea.anclarma.fr">
-    gitea
-  </a>
-  <a mat-menu-item href="https://plex.anclarma.fr">
-    plex
-  </a>
+  <a mat-menu-item href="https://anclarma.fr"> emulatorjs </a>
+  <a mat-menu-item href="https://blog.anclarma.fr"> blog angular </a>
+  <a mat-menu-item href="https://gitea.anclarma.fr"> gitea </a>
+  <a mat-menu-item href="https://plex.anclarma.fr"> plex </a>
   <a mat-menu-item href="https://portfolio.anclarma.fr">
     portfolio ruby on rails
   </a>
-  <a mat-menu-item href="https://wordpress.anclarma.fr">
-    wordpress
-  </a>
+  <a mat-menu-item href="https://wordpress.anclarma.fr"> wordpress </a>
 </mat-menu>
 
 <mat-menu #customMenu="matMenu">
   <a mat-menu-item routerLink="/article">Article</a>
   <a mat-menu-item routerLink="/cube">Cube</a>
+  <a mat-menu-item routerLink="/tetris">Tetris</a>
 </mat-menu>
 
 <mat-menu #portfolioMenu="matMenu">
@@ -78,7 +81,5 @@
   <a mat-menu-item href="https://www.jonathandupre.fr/">
     La taverne de John-John
   </a>
-  <a mat-menu-item href="https://www.commitstrip.com/">
-    CommitStrip
-  </a>
+  <a mat-menu-item href="https://www.commitstrip.com/"> CommitStrip </a>
 </mat-menu>
