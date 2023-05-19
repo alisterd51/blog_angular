@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Base image for production
-FROM nginx:latest AS production
+FROM nginx:alpine AS production
 
 # Create app directory
 WORKDIR /usr/src/app
