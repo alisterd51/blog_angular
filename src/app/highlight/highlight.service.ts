@@ -10,6 +10,11 @@ import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-markdown';
 import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-docker';
+import 'prismjs/components/prism-yaml';
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-nginx';
 import { isPlatformBrowser } from '@angular/common';
 
 declare var Prism: any;
