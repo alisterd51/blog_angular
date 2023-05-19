@@ -9,7 +9,7 @@ import { ArticleService } from './article.service';
 })
 export class ArticleComponent implements OnInit {
   @Input()
-  url: string = "https://gitea.anclarma.fr/anclarma/articles/raw/branch/main/articles/test.md";
+  url: string = "https://gitea.anclarma.fr/anclarma/articles/raw/branch/main/articles/blog-angular.md";
   data: string;
 
   constructor(
