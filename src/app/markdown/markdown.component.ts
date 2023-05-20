@@ -1,29 +1,27 @@
 import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
 import { marked } from 'marked';
-import { mangle } from "marked-mangle";
-import { gfmHeadingId } from "marked-gfm-heading-id";
+import { mangle } from 'marked-mangle';
 import { HighlightService } from '../highlight/highlight.service';
-
-const options = {
-  prefix: "my-prefix-",
-};
 
 @Component({
   selector: 'app-markdown',
   templateUrl: './markdown.component.html',
-  styleUrls: ['./markdown.component.css']
+  styleUrls: ['./markdown.component.css'],
 })
 export class MarkdownComponent implements OnInit, AfterViewChecked {
   @Input()
-  data = "# Hello World!";
+  data = '# Hello World!';
   md!: string;
   highlighted: boolean = false;
 
   constructor(private highlightService: HighlightService) {}
 
   ngOnInit(): void {
-    marked.use(mangle());
-    marked.use(gfmHeadingId(options));
+    marked.use(mangle(), {
+      langPrefix: 'language-',
+      headerIds: null,
+      headerPrefix: null,
+    });
     this.md = marked(this.data);
   }
 
