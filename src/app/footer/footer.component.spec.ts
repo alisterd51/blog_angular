@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -8,6 +9,7 @@ describe('FooterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [MatSidenavModule],
       declarations: [FooterComponent]
     });
     fixture = TestBed.createComponent(FooterComponent);
