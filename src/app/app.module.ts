@@ -22,6 +22,7 @@ import { TetrisComponent } from './tetris/tetris.component';
 import { FooterComponent } from './footer/footer.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HomeComponent,
     TetrisComponent,
     FooterComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

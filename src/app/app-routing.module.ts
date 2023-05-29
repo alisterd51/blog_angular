@@ -5,6 +5,7 @@ import { CubeComponent } from './cube/cube.component';
 import { HomeComponent } from './home/home.component';
 import { TetrisComponent } from './tetris/tetris.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'privacy-policy',
     component: PrivacyPolicyComponent,
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ];
 
