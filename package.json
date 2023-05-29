@@ -24,7 +24,7 @@
     "@ng-icons/bootstrap-icons": "^25.0.1",
     "@ng-icons/core": "^25.0.1",
     "@types/marked": "^5.0.0",
-    "@types/three": "^0.152.0",
+    "@types/three": "^0.152.1",
     "marked": "^5.0.2",
     "marked-mangle": "^1.0.1",
     "prismjs": "^1.29.0",
