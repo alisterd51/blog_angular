@@ -20,6 +20,7 @@ import { CubeComponent } from './cube/cube.component';
 import { HomeComponent } from './home/home.component';
 import { TetrisComponent } from './tetris/tetris.component';
 import { FooterComponent } from './footer/footer.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from './footer/footer.component';
     CubeComponent,
     HomeComponent,
     TetrisComponent,
-    FooterComponent
+    FooterComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,
