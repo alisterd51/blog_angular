@@ -14,19 +14,21 @@ RUN npm ci
 COPY . .
 
 # Creates a "dist" folder with the production build
-RUN npm run build
+RUN npm run build:ssr
 
-# Base image for production
-FROM nginx:alpine AS production
+FROM node:20-alpine AS production
 
 # Create app directory
 WORKDIR /usr/src/app
 
-# Copy a "dist" folder for the production build
-COPY --from=build /usr/src/app/dist/blog_angular /usr/share/nginx/html
+COPY package*.json ./
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/blog_angular.conf
+# Copy a "dist" folder for the production build
+COPY --from=build /usr/src/app/dist /usr/src/app/dist
+
+RUN npm ci --omit=dev
+
+CMD [ "node", "dist/blog_angular/server/main.js" ]
 
 # expose port
-EXPOSE 4200
+EXPOSE 4000

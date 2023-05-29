@@ -16,7 +16,7 @@
             "allowedCommonJsDependencies": [
               "prismjs"
             ],
-            "outputPath": "dist/blog_angular",
+            "outputPath": "dist/blog_angular/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -104,6 +104,60 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/blog_angular/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "blog_angular:build:development",
+              "serverTarget": "blog_angular:server:development"
+            },
+            "production": {
+              "browserTarget": "blog_angular:build:production",
+              "serverTarget": "blog_angular:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "blog_angular:build:production",
+              "serverTarget": "blog_angular:server:production"
+            },
+            "development": {
+              "browserTarget": "blog_angular:build:development",
+              "serverTarget": "blog_angular:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
