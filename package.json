@@ -21,7 +21,7 @@
     "@angular/platform-browser-dynamic": "^16.0.4",
     "@angular/router": "^16.0.4",
     "@angular/service-worker": "^16.0.4",
-    "@ng-icons/bootstrap-icons": "^25.0.1",
+    "@ng-icons/bootstrap-icons": "^25.1.0",
     "@ng-icons/core": "^25.0.1",
     "@types/marked": "^5.0.0",
     "@types/three": "^0.152.1",
