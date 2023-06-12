@@ -22,7 +22,7 @@
     "@angular/material": "^16.0.3",
     "@angular/platform-browser": "^16.0.4",
     "@angular/platform-browser-dynamic": "^16.0.4",
-    "@angular/router": "^16.0.4",
+    "@angular/router": "^16.0.5",
     "@angular/service-worker": "^16.0.4",
     "@ng-icons/bootstrap-icons": "^25.1.0",
     "@ng-icons/core": "^25.0.1",
