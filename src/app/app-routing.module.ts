@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { TetrisComponent } from './tetris/tetris.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AdComponent } from './ad/ad.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'tetris',
     component: TetrisComponent,
+  },
+  {
+    path: 'ads',
+    component: AdComponent,
   },
   {
     path: 'privacy-policy',

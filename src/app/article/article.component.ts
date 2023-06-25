@@ -21,8 +21,12 @@ export class ArticleComponent implements OnInit {
   }
 
   download() {
-    this.articleService.getMarkdown(this.url).subscribe((results) => {
+    this.articleService.getMarkdown(this.url).subscribe(
+      (results) => {
       this.data = results;
+    },
+    (error) => {
+      this.data = 'Failed to download the article [' + this.url + '](' + this.url + ')';
     });
   }
 }

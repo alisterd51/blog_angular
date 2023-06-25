@@ -9,14 +9,14 @@
     </a>
     <div *ngIf="!small">
       <button mat-button [matMenuTriggerFor]="sevicesMenu">Services</button>
-      <button mat-button [matMenuTriggerFor]="customMenu">Custom</button>
+      <button mat-button [matMenuTriggerFor]="pagesMenu">Pages</button>
       <button mat-button [matMenuTriggerFor]="portfolioMenu">Portfolio</button>
       <button mat-button [matMenuTriggerFor]="favoriteSitesMenu">
         Mes sites favories
       </button>
       <a
         mat-button
-        href="https://github.com/alisterd51/blog_angular/tree/latest"
+        href="https://github.com/alisterd51/blog_angular/releases/latest"
       >
         <ng-icon name="bootstrapGithub"></ng-icon>
         GitHub
@@ -32,14 +32,14 @@
 
 <mat-menu #smallMenu="matMenu">
   <button mat-menu-item [matMenuTriggerFor]="sevicesMenu">Services</button>
-  <button mat-menu-item [matMenuTriggerFor]="customMenu">Custom</button>
+  <button mat-menu-item [matMenuTriggerFor]="pagesMenu">Pages</button>
   <button mat-menu-item [matMenuTriggerFor]="portfolioMenu">Portfolio</button>
   <button mat-menu-item [matMenuTriggerFor]="favoriteSitesMenu">
     Mes sites favories
   </button>
   <a
     mat-menu-item
-    href="https://github.com/alisterd51/blog_angular/tree/latest"
+    href="https://github.com/alisterd51/blog_angular/releases/latest"
   >
     <ng-icon name="bootstrapGithub"></ng-icon>
     GitHub
@@ -57,10 +57,11 @@
   <a mat-menu-item href="https://wordpress.anclarma.fr"> wordpress </a>
 </mat-menu>
 
-<mat-menu #customMenu="matMenu">
+<mat-menu #pagesMenu="matMenu">
   <a mat-menu-item routerLink="/article">Article</a>
   <a mat-menu-item routerLink="/cube">Cube</a>
   <a mat-menu-item routerLink="/tetris">Tetris</a>
+  <a mat-menu-item routerLink="/ads">Ads</a>
 </mat-menu>
 
 <mat-menu #portfolioMenu="matMenu">
