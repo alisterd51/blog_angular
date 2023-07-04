@@ -24,6 +24,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdComponent } from './ad/ad.component';
+import { ArticlePreviewComponent } from './article-preview/article-preview.component';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { AdComponent } from './ad/ad.component';
     FooterComponent,
     PrivacyPolicyComponent,
     PageNotFoundComponent,
-    AdComponent
+    AdComponent,
+    ArticlePreviewComponent,
+    ArticleListComponent
   ],
   imports: [
     BrowserModule,
