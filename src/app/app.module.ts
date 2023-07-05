@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
 import { NgIconsModule } from '@ng-icons/core';
 import { bootstrapGithub } from '@ng-icons/bootstrap-icons';
 import { CubeComponent } from './cube/cube.component';
@@ -54,6 +55,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
     MatMenuModule,
     MatTreeModule,
     MatSidenavModule,
+    MatCardModule,
     NgIconsModule.withIcons({ bootstrapGithub }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
