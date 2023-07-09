@@ -14,7 +14,6 @@ export class ArticleComponent implements OnInit {
   url: string = "https://cdn.anclarma.fr/articles/articles/blog-angular.md";
   //TODO a remplacer par un 404 si le nom de l'article n'est pas valid
   data: string;
-  article: Article;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,11 +21,11 @@ export class ArticleComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.article = this.articleService.getArticle(this.route.snapshot.paramMap.get('name'));
-    if (this.article !== undefined) {
-      this.url = this.article.url;
-    }
-    this.download();
+    this.articleService.getArticle(this.route.snapshot.paramMap.get('name'))
+      .subscribe(article => {
+        this.url = article.url;
+        this.download();
+      });
   }
 
   download() {
