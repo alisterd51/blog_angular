@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ArticleService } from './article.service';
-import { Article } from '../article';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription, lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-article',
@@ -9,33 +9,41 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./article.component.css'],
   providers: [ArticleService],
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent implements OnInit, OnDestroy {
   @Input()
   url: string = "https://cdn.anclarma.fr/articles/articles/blog-angular.md";
   //TODO a remplacer par un 404 si le nom de l'article n'est pas valid
+  param: string;
   data: string;
-  article: Article;
+  articleSubscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     private articleService: ArticleService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.article = this.articleService.getArticle(this.route.snapshot.paramMap.get('name'));
-    if (this.article !== undefined) {
-      this.url = this.article.url;
+    this.param = this.route.snapshot.paramMap.get('name');
+    if (this.param === null) {
+      this.download();
+    } else {
+      this.articleSubscription = this.articleService
+        .getArticle(this.param)
+        .subscribe(article => {
+          this.url = article.url;
+          this.download();
+        })
     }
-    this.download();
   }
 
-  download() {
-    this.articleService.getMarkdown(this.url).subscribe(
-      (results) => {
-      this.data = results;
-    },
-    (error) => {
-      this.data = 'Failed to download the article [' + this.url + '](' + this.url + ')';
-    });
+  ngOnDestroy(): void {
+    this.articleSubscription.unsubscribe();
+  }
+
+  async download() {
+    this.data = await lastValueFrom(
+      this.articleService.getMarkdown(this.url),
+      { defaultValue: 'Failed to download the article [' + this.url + '](' + this.url + ')' }
+    );
   }
 }
