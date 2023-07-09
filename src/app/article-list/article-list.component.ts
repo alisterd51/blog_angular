@@ -15,8 +15,6 @@ export class ArticleListComponent {
   ) {}
 
   ngOnInit(): void {
-      this.articleService.getArticles().subscribe(articles => {
-        this.articleList = articles;
-      });
+      this.articleList = this.articleService.getArticles();
   }
 }
