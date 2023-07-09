@@ -37,7 +37,9 @@ export class ArticleComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.articleSubscription.unsubscribe();
+    if (this.articleSubscription !== undefined) {
+      this.articleSubscription.unsubscribe();
+    }
   }
 
   async download() {
